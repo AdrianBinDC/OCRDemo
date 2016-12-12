@@ -16,6 +16,21 @@ class MainViewController: UIViewController {
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var buttonFour: UIButton!
     
+    // Constructed an enum to minimize typos
+    enum TestImage: String {
+        case image0 = "image0.jpg"
+        case image1 = "image1.jpg"
+        case image2 = "image2.jpg"
+        case image3 = "image3.jpg"
+    }
+    
+    // create a variable to pass along to the next viewController
+    var imageToScan: UIImage? {
+        didSet {
+            print("imageToScan updated")
+        }
+    }
+    
     // MARK: - Lifecycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,35 +50,53 @@ class MainViewController: UIViewController {
                 button?.setImage(buttonImage, for: .normal)
                 button?.imageView?.contentMode = .scaleAspectFit
             }
+            button?.layer.cornerRadius = 10.0
+            button?.layer.borderWidth = 2.0
+            button?.layer.borderColor = UIColor.red.cgColor
         }
     }
     
     // MARK: - Button Actions
     
     @IBAction func buttonAction(_ sender: UIButton) {
+        
+        // set the image on the currentViewController
         switch sender.tag {
         case 0:
-            print("button 0 pressed")
+            imageToScan = UIImage(named: TestImage.image0.rawValue)!
         case 1:
-            print("button 1 pressed")
+            imageToScan = UIImage(named: TestImage.image1.rawValue)!
         case 2:
-            print("button 2 pressed")
+            imageToScan = UIImage(named: TestImage.image2.rawValue)!
         case 3:
-            print("button 3 pressed")
+            imageToScan = UIImage(named: TestImage.image3.rawValue)!
         default:
             return
         }
         
+        performSegue(withIdentifier: "detailSegue", sender: sender)
     }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "detailSegue" {
+            let destinationViewController = segue.destination as! DetailViewController
+            destinationViewController.imageToScan = imageToScan
+            switch (sender as! UIButton).tag {
+            case 0:
+                destinationViewController.labelString = TestImage.image0.rawValue
+            case 1:
+                destinationViewController.labelString = TestImage.image1.rawValue
+            case 2:
+                destinationViewController.labelString = TestImage.image2.rawValue
+            case 3:
+                destinationViewController.labelString = TestImage.image3.rawValue
+            default:
+                break
+            }
+        }
     }
-    */
 
 }

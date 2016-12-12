@@ -9,11 +9,31 @@
 import UIKit
 
 class DetailViewController: UIViewController {
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var textView: UITextView!
+    
+    var labelString: String?
+    var imageToScan: UIImage?
+    
 
+    // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        label.text = labelString
+        configureImageView()
 
         // Do any additional setup after loading the view.
+    }
+    
+    // MARK: - Configuration Methods
+    func configureImageView() {
+        imageView.image = imageToScan
+        imageView.layer.borderWidth = 2.0
+        imageView.layer.borderColor = UIColor.red.cgColor
+        imageView.layer.cornerRadius = 10.0
+        imageView.contentMode = .scaleAspectFit
     }
 
     override func didReceiveMemoryWarning() {
