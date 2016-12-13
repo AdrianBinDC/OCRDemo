@@ -15,6 +15,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak var buttonTwo: UIButton!
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var buttonFour: UIButton!
+    @IBOutlet weak var buttonFive: UIButton!
+    @IBOutlet weak var buttonSix: UIButton!
     
     // Constructed an enum to minimize typos
     enum TestImage: String {
@@ -22,6 +24,8 @@ class MainViewController: UIViewController {
         case image1 = "image1.jpg"
         case image2 = "image2.jpg"
         case image3 = "image3.jpg"
+        case image4 = "image4.jpg"
+        case image5 = "image5.jpg"
     }
     
     // create a variable to pass along to the next viewController
@@ -41,7 +45,7 @@ class MainViewController: UIViewController {
     
     // MARK: - Configuration methods
     func configureButtons() {
-        let buttonArray = [buttonOne, buttonTwo, buttonThree, buttonFour]
+        let buttonArray = [buttonOne, buttonTwo, buttonThree, buttonFour, buttonFive, buttonSix]
         
         for button in buttonArray {
             if let buttonTag = button?.tag {
@@ -70,6 +74,10 @@ class MainViewController: UIViewController {
             imageToScan = UIImage(named: TestImage.image2.rawValue)!
         case 3:
             imageToScan = UIImage(named: TestImage.image3.rawValue)!
+        case 4:
+            imageToScan = UIImage(named: TestImage.image4.rawValue)!
+        case 5:
+            imageToScan = UIImage(named: TestImage.image5.rawValue)!
         default:
             return
         }
@@ -93,6 +101,10 @@ class MainViewController: UIViewController {
                 destinationViewController.labelString = TestImage.image2.rawValue
             case 3:
                 destinationViewController.labelString = TestImage.image3.rawValue
+            case 4:
+                destinationViewController.labelString = TestImage.image4.rawValue
+            case 5:
+                destinationViewController.labelString = TestImage.image5.rawValue
             default:
                 break
             }

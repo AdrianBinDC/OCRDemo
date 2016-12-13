@@ -304,7 +304,8 @@ open class SwiftOCRTraining {
     
     open   func saveOCR() {
         //Set this path to the location of your OCR-Network file.
-        let path = NSString(string:"~/Desktop/OCR-Network").expandingTildeInPath
+//        let path = NSString(string:"~/Desktop/OCR-Network").expandingTildeInPath
+        let path = Bundle.main.path(forResource: "OCR-Network", ofType: "")
         globalNetwork.writeToFile(URL(string: "file://\(path)")!)
     }
     

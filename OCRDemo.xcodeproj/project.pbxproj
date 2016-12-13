@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		30C45239584E8BC43796E0A2 /* Pods_OCRDemo.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AC2294BC04C9C0D854C59E60 /* Pods_OCRDemo.framework */; };
+		557718B51E000B6500BACFA9 /* image4.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 557718B41E000B6500BACFA9 /* image4.jpg */; };
+		557718B91E00199300BACFA9 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557718B81E00199300BACFA9 /* UIImage+Extension.swift */; };
+		557718BB1E002D2500BACFA9 /* image5.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 557718BA1E002D2500BACFA9 /* image5.jpg */; };
+		557718C21E0037BE00BACFA9 /* OCR-Network in Resources */ = {isa = PBXBuildFile; fileRef = 557718C11E0037BE00BACFA9 /* OCR-Network */; };
 		558D8DD01DFF24B8004C8B81 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D8DCF1DFF24B8004C8B81 /* AppDelegate.swift */; };
 		558D8DD51DFF24B8004C8B81 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558D8DD31DFF24B8004C8B81 /* Main.storyboard */; };
 		558D8DD71DFF24B8004C8B81 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558D8DD61DFF24B8004C8B81 /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 		273A989A3F38116CE6D359ED /* Pods-OCRDemoTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRDemoTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCRDemoTests/Pods-OCRDemoTests.debug.xcconfig"; sourceTree = "<group>"; };
 		37DEB2F0C80B4CB3797C0C1B /* Pods-OCRDemoUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRDemoUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OCRDemoUITests/Pods-OCRDemoUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4191611A9849734F30E76024 /* Pods-OCRDemo.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OCRDemo.release.xcconfig"; path = "Pods/Target Support Files/Pods-OCRDemo/Pods-OCRDemo.release.xcconfig"; sourceTree = "<group>"; };
+		557718B41E000B6500BACFA9 /* image4.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image4.jpg; sourceTree = "<group>"; };
+		557718B81E00199300BACFA9 /* UIImage+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		557718BA1E002D2500BACFA9 /* image5.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = image5.jpg; sourceTree = "<group>"; };
+		557718C11E0037BE00BACFA9 /* OCR-Network */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = "OCR-Network"; sourceTree = "<group>"; };
 		558D8DCC1DFF24B8004C8B81 /* OCRDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OCRDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		558D8DCF1DFF24B8004C8B81 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		558D8DD41DFF24B8004C8B81 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -206,6 +214,7 @@
 		558D8DFF1DFF2B29004C8B81 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				557718B81E00199300BACFA9 /* UIImage+Extension.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -217,6 +226,8 @@
 				558D8E061DFF3473004C8B81 /* image1.jpg */,
 				558D8E071DFF3473004C8B81 /* image2.jpg */,
 				558D8E081DFF3473004C8B81 /* image3.jpg */,
+				557718B41E000B6500BACFA9 /* image4.jpg */,
+				557718BA1E002D2500BACFA9 /* image5.jpg */,
 			);
 			name = "Test Images";
 			sourceTree = "<group>";
@@ -224,6 +235,7 @@
 		558D8E171DFF9D3D004C8B81 /* Dependencies */ = {
 			isa = PBXGroup;
 			children = (
+				557718C11E0037BE00BACFA9 /* OCR-Network */,
 				558D8E1A1DFF9D8C004C8B81 /* Swift-AI */,
 				558D8E181DFF9D5F004C8B81 /* UnionFind.swift */,
 			);
@@ -377,11 +389,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557718C21E0037BE00BACFA9 /* OCR-Network in Resources */,
 				558D8DDA1DFF24B8004C8B81 /* LaunchScreen.storyboard in Resources */,
+				557718BB1E002D2500BACFA9 /* image5.jpg in Resources */,
 				558D8DD71DFF24B8004C8B81 /* Assets.xcassets in Resources */,
 				558D8E0C1DFF3473004C8B81 /* image3.jpg in Resources */,
 				558D8E091DFF3473004C8B81 /* image0.jpg in Resources */,
 				558D8DD51DFF24B8004C8B81 /* Main.storyboard in Resources */,
+				557718B51E000B6500BACFA9 /* image4.jpg in Resources */,
 				558D8E0B1DFF3473004C8B81 /* image2.jpg in Resources */,
 				558D8E0A1DFF3473004C8B81 /* image1.jpg in Resources */,
 			);
@@ -546,6 +561,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557718B91E00199300BACFA9 /* UIImage+Extension.swift in Sources */,
 				558D8E251DFF9DBB004C8B81 /* Matrix.swift in Sources */,
 				558D8E291DFF9DBB004C8B81 /* Storage.swift in Sources */,
 				558D8E231DFF9DBB004C8B81 /* FFNN.swift in Sources */,

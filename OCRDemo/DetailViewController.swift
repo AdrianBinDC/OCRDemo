@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+import SwiftOCR
 
 class DetailViewController: UIViewController {
     
@@ -18,29 +18,39 @@ class DetailViewController: UIViewController {
     var labelString: String?
     var imageToScan: UIImage?
     
+    let swiftOCRInstance = SwiftOCR()
+    
 
     // MARK: - Life Cycle Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = labelString
         configureImageView()
+        scanImage()
 
         // Do any additional setup after loading the view.
     }
     
     // MARK: - Configuration Methods
     func configureImageView() {
+        imageToScan = imageToScan?.grayscale()
         imageView.image = imageToScan
         imageView.layer.borderWidth = 2.0
         imageView.layer.borderColor = UIColor.red.cgColor
         imageView.layer.cornerRadius = 10.0
         imageView.contentMode = .scaleAspectFit
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    // MARK: - OCR Methods
+    func scanImage() {
+        if let imageToScan = imageToScan {
+//            swiftOCRInstance.characterWhiteList = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890"
+            swiftOCRInstance.recognize(imageToScan) { recognizedString in
+                print("recognizedString = \(recognizedString)")
+            }
+        }
     }
+    
     
 
     /*
