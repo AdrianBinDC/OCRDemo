@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import TesseractOCR
 
 class DetailViewController: UIViewController {
     
@@ -24,9 +23,6 @@ class DetailViewController: UIViewController {
         super.viewDidLoad()
         label.text = labelString
         configureImageView()
-        if let imageToScan = imageToScan {
-            performOCR(on: imageToScan)
-        }
 
         // Do any additional setup after loading the view.
     }
@@ -39,20 +35,12 @@ class DetailViewController: UIViewController {
         imageView.layer.cornerRadius = 10.0
         imageView.contentMode = .scaleAspectFit
     }
-    
-    func performOCR(on image: UIImage) {
-        let tesseract = G8Tesseract(language: "eng+fra")
-        tesseract?.delegate = self
-        tesseract?.engineMode = .tesseractCubeCombined
-        tesseract?.pageSegmentationMode = .auto
-        tesseract?.maximumRecognitionTime = 60.0
-        tesseract?.image = imageToScan?.g8_grayScale()
-        tesseract?.recognize()
-        
-        print("recognizedText = \(tesseract?.recognizedText)")
-        
-        textView.text = tesseract?.recognizedText
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
     }
+    
 
     /*
     // MARK: - Navigation
@@ -64,10 +52,4 @@ class DetailViewController: UIViewController {
     }
     */
 
-}
-
-extension DetailViewController: G8TesseractDelegate {
-    func shouldCancelImageRecognition(for tesseract: G8Tesseract!) -> Bool {
-        return false
-    }
 }
