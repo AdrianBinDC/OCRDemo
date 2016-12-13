@@ -6,7 +6,7 @@ target 'OCRDemo' do
     use_frameworks!
     
     # Pods for OCRDemo
-    pod 'SwiftOCR'
+    pod 'TesseractOCRiOS', '4.0.0'
 
     target 'OCRDemoTests' do
         inherit! :search_paths
